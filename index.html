@@ -1,0 +1,2520 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>DeliverED Home</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge;" />
+
+  <link rel="icon" type="image/png" href="assets/img/favicon.png" />
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Arapey:ital@0;1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600&display=swap" rel="stylesheet">
+
+  <link href="https://unpkg.com/cirrus-ui" type="text/css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.plyr.io/3.6.4/plyr.css" />
+  <link rel="stylesheet" href="css/style.css">
+
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/3883f392c5.js" crossorigin="anonymous"></script>
+
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+    // Load google charts
+    google.charts.load('current', {
+      'packages': ['corechart']
+    });
+    google.charts.setOnLoadCallback(drawChart1);
+    google.charts.setOnLoadCallback(drawChart2);
+
+    // Draw the chart and set the chart values
+    function drawChart1() {
+      var data1 = google.visualization.arrayToDataTable([
+        ['Action', 'Cost (GBP)'],
+        ['Used', 18.67],
+        ['Not Used', 181.33],
+      ]);
+
+      // Optional; add a title and set the width and height of the chart
+      var options1 = {
+        'title': '£200 Budget Consumption (£GBP)',
+        'width': 550,
+        'height': 400,
+        'is3D': true
+      };
+
+      // Display the chart inside the <div> element with id="piechart"
+      var chart = new google.visualization.PieChart(document.getElementById('piechart-budget'));
+      chart.draw(data1, options1);
+    }
+
+    // Draw the chart and set the chart values
+    function drawChart2() {
+      var data2 = google.visualization.arrayToDataTable([
+        ['Action', 'Cost (hrs)'],
+        ['Used', 53],
+        ['Not Used', 82],
+      ]);
+
+      // Optional; add a title and set the width and height of the chart
+      var options2 = {
+        'title': '135hr Technician Time Budget Consumption [Labs and 3hr Weekly Budget] (hrs)',
+        'width': 550,
+        'height': 400,
+        'is3D': true
+      };
+
+      // Display the chart inside the <div> element with id="piechart"
+      var chart = new google.visualization.PieChart(document.getElementById('piechart-tech'));
+      chart.draw(data2, options2);
+    }
+  </script>
+</head>
+
+<body>
+  <img src="assets/img/blue-blob.png" id="blue-blob">
+
+  <div class="header header-fixed header-clear-mod">
+    <div class="header-brand">
+      <div class="nav-item no-hover">
+        <a class="blue-link" id="home-nav" href="#home"><img src="assets/img/small-logo-blue-final.png" alt="" id="nav-logo"></a>
+      </div>
+    </div>
+    <div class="header-nav">
+      <div class="nav-right">
+        <!-- small screen -->
+        <div class="header-menu-s nav-item">
+          <a class="blue-link" id="dropdown-btn"><i class="fa fa-wrapper fa-chevron-down" style="font-size: 5.9vh;"></i></a>
+        </div>
+        <!-- large screen -->
+        <div class="header-menu-lg nav-item">
+          <a class="blue-link u u-C" href="#system" id="sys-nav">System</a>
+        </div>
+        <div class="header-menu-lg nav-item">
+          <a class="blue-link u u-C" href="#how-it-works">How It Works</a>
+        </div>
+        <div class="header-menu-lg nav-item">
+          <a class="blue-link u u-C" href="#budget">Budget</a>
+        </div>
+        <div class="header-menu-lg nav-item">
+          <a class="blue-link u u-C" href="#team">Team</a>
+        </div>
+        <div class="header-menu-lg nav-item">
+          <a class="blue-link u u-C" href="#evaluation">Evaluation</a>
+        </div>
+        <div class="header-menu-lg nav-item">
+          <button class="btn-info header-btn" onclick="location.href='user-guide.html'">User Guide</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" id="dropdown">
+    <div class="section-content card">
+      <div class="card-content">
+        <a class="blue-link u u-C" href="#system" id="sys-nav-2">System</a>
+        <br><br>
+        <a class="blue-link u u-C" href="#how-it-works">How It Works</a>
+        <br><br>
+        <a class="blue-link u u-C" href="#budget">Budget</a>
+        <br><br>
+        <a class="blue-link u u-C" href="#team">Team</a>
+        <br><br>
+        <a class="blue-link u u-C" href="#evaluation">Evaluation</a>
+        <br><br>
+        <button class="btn-info header-btn" onclick="location.href='user-guide.html'" style="width: 100%;">User Guide</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" id="home">
+    <!-- large screen -->
+    <div id="branding-container" class="u-none-xs u-none-sm-only u-none-md-only">
+      <div id="branding">
+        <img src="assets/img/long-logo-blue-2-green.png" alt="DeliverED Logo" id="home-logo">
+        <h1 id="home-text">Home</h1>
+        <p id="home-subtext"><b>A Smart Mailbox For All Your Home Delivery Needs.</b></p>
+      </div>
+    </div>
+    <div id="house-container" class="u-none-xs u-none-sm-only u-none-md-only">
+      <img src="assets/img/home-image.png" id="home-img">
+    </div>
+
+    <!-- small screen -->
+    <div id="branding-container-s" class="u-none-md u-none-lg">
+      <div id="branding-s">
+        <img src="assets/img/long-logo-blue-2-green.png" alt="DeliverED Logo" id="home-logo-s">
+        <h1 id="home-text-s">Home</h1>
+        <p id="home-subtext-s"><b>A Smart Mailbox For All Your Home Delivery Needs.</b></p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section" id="system">
+    <div class="section-content card">
+      <div class="card-head">
+        <h3 class="page-head"><i class="icon icon-title fa fa-wrapper fa-cogs"></i>System</h3>
+      </div>
+      <div class="space"></div>
+      <div class="space"></div>
+      <div class="card-content">
+        <div class="card-para">
+          <h4>What is DeliverED Home?</h4>
+          <p>DeliverED Home is a smart mailbox built to make home deliveries as easy as the push of a button. Our device handles all your home deliveries, securely holding them right outside your door until you’re ready to collect. No more staying at
+            home waiting, no more communal lockers – this mailbox is designed with homeowners in mind. </p>
+        </div>
+
+        <div class="space"></div>
+
+        <div class="row">
+          <div class="col-6">
+            <figure class="fig">
+              <video controls poster="assets/img/poster.png">
+                <source src="assets/vid/pitch.mp4" type="video/mp4" />
+              </video>
+              <figcaption class="fig-caption u-text-center">
+                Video 1: Our Product Pitch
+              </figcaption>
+            </figure>
+          </div>
+          <div class="col-6">
+            <figure class="fig">
+              <video controls poster="assets/img/poster.png">
+                <source src="assets/vid/ad.mp4" type="video/mp4" />
+              </video>
+              <figcaption class="fig-caption u-text-center">
+                Video 2: Our Ad
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="space"></div>
+
+        <div class="row u-none-xs u-none-sm-only">
+          <div class="col-4 offset-1">
+            <div class="divider"></div>
+          </div>
+          <div class="col-2">
+            <h6 class="divider-title">Features</h6>
+          </div>
+          <div class="col-4">
+            <div class="divider"></div>
+          </div>
+        </div>
+
+        <div class="space u-none-sm"></div>
+
+        <div class="row u-none-sm">
+          <div class="col-xs-5">
+            <div class="divider"></div>
+          </div>
+          <div class="col-xs-2">
+            <h6 class="divider-title">Features</h6>
+          </div>
+          <div class="col-xs-5">
+            <div class="divider"></div>
+          </div>
+        </div>
+
+        <div class="space"></div>
+
+        <div class="row">
+          <div class="col-4">
+            <div class="card placeholder h-100">
+              <div class="u-text-center">
+                <div aria-hidden="true" focusable="false" data-prefix="fas" class="icon animated pulse text-blue-600 bg-blue-100 p-3" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"
+                  style="border-radius: 100%; height: 4.75rem; width: 4.75rem;">
+                  <i class="fa fa-truck-loading" style="font-size: 1.5rem"></i>
+                </div>
+                <h6 class="placeholder-title">Simple Drop-offs</h6>
+                <p>We know that couriers are on a tight schedule, and don’t want to deal with complex mailboxes in the middle of a shift.
+                  DeliverED Home allows couriers to drop off parcels with the push of a button, while keeping the rest of your parcels safe and unreachable, just in case.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-4">
+            <div class="card placeholder h-100">
+              <div class="u-text-center">
+                <div aria-hidden="true" focusable="false" data-prefix="fas" class="icon animated pulse text-blue-600 bg-blue-100 p-3" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"
+                  style="border-radius: 100%; height: 4.75rem; width: 4.75rem;">
+                  <i class="fa fa-clock" style="font-size: 1.8rem"></i>
+                </div>
+                <h6 class="placeholder-title">Real-Time Notifications</h6>
+                <p>Get real-time alerts with our DeliverED app. Know when a parcel has arrived, when your device is low on charge, and when
+                  your mailbox is full. Our app also provides multiple security alerts, so you can rest easy knowing your parcels will be safe when you return home.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-4">
+            <div class="card placeholder h-100">
+              <div class="u-text-center">
+                <div aria-hidden="true" focusable="false" data-prefix="fas" class="icon animated pulse text-blue-600 bg-blue-100 p-3" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"
+                  style="border-radius: 100%; height: 4.75rem; width: 4.75rem;">
+                  <i class="fa fa-lock" style="font-size: 1.8rem"></i>
+                </div>
+                <h6 class="placeholder-title">Secure Compartment</h6>
+                <p>Once a parcel has been dropped into the mailbox, it is transferred into a separate secure compartment, only accessible via
+                  our DeliverED app. Parcel security is extremely important to us, and so is your trust in us.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-4">
+            <div class="card placeholder h-100">
+              <div class="u-text-center">
+                <div aria-hidden="true" focusable="false" data-prefix="fas" class="icon animated pulse text-blue-600 bg-blue-100 p-3" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"
+                  style="border-radius: 100%; height: 4.75rem; width: 4.75rem;">
+                  <i class="fa fa-hand-sparkles" style="font-size: 1.55rem"></i>
+                </div>
+                <h6 class="placeholder-title">UV Sanitation</h6>
+                <p>Even without COVID-19, there are hundreds of bugs and diseases that could be picked up by your parcels during delivery. DeliverED Home comes with safe built-in UV sanitation, so you don’t have to worry
+                  about bringing germs into your home.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-4">
+            <div class="card placeholder h-100">
+              <div class="u-text-center">
+                <div aria-hidden="true" focusable="false" data-prefix="fas" class="icon animated pulse text-blue-600 bg-blue-100 p-3" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"
+                  style="border-radius: 100%; height: 4.75rem; width: 4.75rem;">
+                  <i class="fa fa-battery-full" style="font-size: 1.5rem"></i>
+                </div>
+                <h6 class="placeholder-title">Long Battery Life</h6>
+                <p>All DeliverED devices come with a long-lasting battery, and an in-built safety mechanism to ensure that even if your device runs out of charge, your parcels will be protected. Our app will notify you
+                  when your battery is low, and we provide cheap and easy battery replacement services.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-4">
+            <div class="card placeholder h-100">
+              <div class="u-text-center">
+                <div aria-hidden="true" focusable="false" data-prefix="fas" class="icon animated pulse text-blue-600 bg-blue-100 p-3" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"
+                  style="border-radius: 100%; height: 4.75rem; width: 4.75rem;">
+                  <i class="fa fa-cloud-sun-rain" style="font-size: 1.8rem"></i>
+                </div>
+                <h6 class="placeholder-title">Tamper Proof</h6>
+                <p>All our devices are made of tough materials, making them both tamper and weather resistant. Our mailboxes fit securely to your wall or floor, preventing theft, and giving you total peace of mind. This
+                  coupled with real-time security alerts via our App gives you what we hope to be total confidence in the safety of your parcels.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="space"></div>
+
+        <div class="row u-none-xs u-none-sm-only">
+          <div class="col-10 offset-1">
+            <div class="divider"></div>
+          </div>
+        </div>
+
+        <div class="row u-none-sm">
+          <div class="col-xs-12">
+            <div class="divider"></div>
+          </div>
+        </div>
+        <div class="space"></div>
+
+        <div class="card-para">
+          <h4>Did you know...</h4>
+          <p>
+            ... that <span style="color:red">90,000 packages disappear DAILY</span><sup><a class="u u-C blue-link" href="https://www.nytimes.com/2019/12/02/nyregion/online-shopping-package-theft.html">1</a></sup> in New York alone? And that between
+            2016 and 2019, <span style="color:red">package thefts rose by 22%</span><sup><a class="u u-C blue-link"
+                href="https://www.parcelandpostaltechnologyinternational.com/news/last-mile/doorstep-parcel-thefts-on-the-rise-in-the-uk.html">2</a></sup> in the UK? With more and more of us shopping online every day, this form of theft has become a
+            significant problem worldwide. At DeliverED, <span style="color:green">we worry about this FOR you</span>, so you don’t have to. But that’s not all – recent surveys have shown that <span style="color:red">84% of shoppers are unlikely to
+              re-use a brand after a bad delivery experience</span><sup><a class="u u-C blue-link" href="https://www.getconvey.com/resource/research-last-mile-delivery-save-retail/">3</a></sup>. By protecting your parcels and ensuring a quick and
+            easy delivery experience for couriers, we aim to greatly improve the delivery experience – for everyone.
+          </p>
+        </div>
+
+        <div class="space"></div>
+
+        <div class="row u-none-xs u-none-sm-only">
+          <div class="col-4 offset-1">
+            <div class="divider"></div>
+          </div>
+          <div class="col-2">
+            <h6 class="divider-title">Market Research</h6>
+          </div>
+          <div class="col-4">
+            <div class="divider"></div>
+          </div>
+        </div>
+
+        <div class="space u-none-sm"></div>
+
+        <div class="row u-none-sm">
+          <div class="col-xs-4">
+            <div class="divider"></div>
+          </div>
+          <div class="col-xs-4">
+            <h6 class="divider-title">Market Research</h6>
+          </div>
+          <div class="col-xs-4">
+            <div class="divider"></div>
+          </div>
+        </div>
+
+        <div class="space"></div>
+
+        <div class="row" id="market">
+          <div class="col-4">
+            <div class="card card--slide-up">
+              <div class="card__container">
+                <div class="card__image" style="background-image: url('https://safetyletterbox.com/wp-content/uploads/myrenzbox-for-your-home-parcel-delivery.jpg');"></div>
+              </div>
+              <div class="card__mobile-title">
+                <div class="content">
+                  <div class="tile">
+                    <div class="tile__container">
+                      <h4 class="tile__title">myRenzbox</h4>
+                      <p class="tile__subtitle">The Safetly Letterbox Company LTD.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card__body content">
+                <ul>
+                  <li>Made with commercial or residential building owners in mind</li>
+                  <li>Larger mailboxes for more general use</li>
+                  <li>No sanitization</li>
+                </ul>
+              </div>
+              <div class="card__footer content"><a class="blue-link" href="assets/vid/myRenzBox.mp4">Watch our talk</a> / <a class="blue-link" href="#myrenzbox">Read more</a></div>
+            </div>
+          </div>
+
+          <div class="col-4">
+            <div class="card card--slide-up h-100 u-flex u-flex-column">
+              <div class="card__container">
+                <div class="card__image" style="background-image: url('https://images.idgesg.net/images/article/2020/09/yaledeliverybox_brighton_delivery-100859979-large.jpg');"></div>
+              </div>
+              <div class="card__mobile-title">
+                <div class="content">
+                  <div class="tile">
+                    <div class="tile__container">
+                      <h4 class="tile__title">Yale Smart Delivery Box</h4>
+                      <p class="tile__subtitle">Yale, Assa Abloy Residential Group</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card__body content">
+                <ul class="s">
+                  <li>No secure compartment in their design</li>
+                  <li>Unlocked via keypad</li>
+                  <li>Remains unlocked until a delivery is made, then auto-locks</li>
+                  <li>No sanitization</li>
+                </ul>
+              </div>
+              <div class="card__footer content"><a class="blue-link" href="assets/vid/yale.m4v">Watch our talk</a> / <a class="blue-link" href="#yalebox">Read more</a></div>
+            </div>
+          </div>
+
+          <div class="col-4">
+            <div class="card card--slide-up">
+              <div class="card__container">
+                <div class="card__image" style="background-image: url('https://images-na.ssl-images-amazon.com/images/G/01//prime/primeinsider2/lockers/amzn_lockers_hero_1200x1200.png');"></div>
+              </div>
+              <div class="card__mobile-title">
+                <div class="content">
+                  <div class="tile">
+                    <div class="tile__container">
+                      <h4 class="tile__title">Amazon Locker</h4>
+                      <p class="tile__subtitle">Amazon.com, Inc.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card__body content">
+                <ul class="xs">
+                  <li>"Go and Collect" service which may be available in an area close to you</li>
+                  <li>3 calendar days to pick up your parcel</li>
+                  <li>Only items dispatched by Amazon are eligible for delivery to and collection from a Locker</li>
+                  <li>No sanitization</li>
+                </ul>
+              </div>
+              <div class="card__footer content"><a class="blue-link" href="assets/vid/amazon.mp4">Watch our talk</a> / <a class="blue-link" href="#amazonlocker">Read more</a></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="space"></div>
+
+        <div class="row u-none-xs u-none-sm-only">
+          <div class="col-4 offset-1">
+            <div class="divider"></div>
+          </div>
+          <div class="col-2">
+            <h6 class="divider-title">Future Developments</h6>
+          </div>
+          <div class="col-4">
+            <div class="divider"></div>
+          </div>
+        </div>
+
+        <div class="space u-none-sm"></div>
+
+        <div class="row u-none-sm">
+          <div class="col-xs-4">
+            <div class="divider"></div>
+          </div>
+          <div class="col-xs-4">
+            <h6 class="divider-title">Future Developments</h6>
+          </div>
+          <div class="col-xs-4">
+            <div class="divider"></div>
+          </div>
+        </div>
+
+        <div class="space"></div>
+
+        <div class="row">
+          <div class="col-6">
+            <div class="placeholder h-100 u-flex u-flex-column">
+              <div class="placeholder-icon"><span class="icon"><i class="fa fa-wrapper fa-expand-arrows-alt xx-large"></i></span></div>
+              <h6 class="placeholder-title">Expanding Our Customer Base</h6>
+              <div class="placeholder-subtitle">At DeliverED, catering to everyone’s needs, not just homeowners, is something that we would love to accomplish. We eventually aim to launch other targeted mailboxes – for example, DeliverED Office and
+                DeliverED School.</div>
+            </div>
+          </div>
+
+          <div class="col-6">
+            <div class="placeholder h-100 u-flex u-flex-column">
+              <div class="placeholder-icon"><span class="icon"><i class="fa fa-wrapper fa-paint-brush xx-large"></i></span></div>
+              <h6 class="placeholder-title">Full Customisation</h6>
+              <div class="placeholder-subtitle">We aim to make all our mailboxes 100% tailored to you. We plan to provide an extensive range of colours and sizes, so that no matter what, we have something for you.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" id="how-it-works">
+    <div class="section-content card">
+      <div class="card-head">
+        <h3 class="page-head"><i class="icon icon-title fa fa-wrapper fa-question-circle"></i>How It Works</h3>
+      </div>
+      <div class="card-content">
+        <div class="space"></div>
+        <h6>System Summary</h6>
+        <p>All functionalities of our mailboxes are managed within either the physical device, or by our app. The human interaction process for a package delivery via our devices is as follows. First, the courier opens the delivery compartment,
+          places a package inside, and pushes a clearly labelled “Deliver” button on the top of the device. The package is then dropped into a secure compartment. Internally, the delivery process is as follows:</p>
+        <div class="row">
+          <div class="col-10">
+            <ol>
+              <li>Deliver button is pushed and delivery door locked.</li>
+              <li>Internal lift is raised to its maximum height, taking into account existing packages. This height is detected via an infrared sensor on the inside.</li>
+              <li>Trapdoor is unlocked, dropping the package a very short distance onto the lift platform.</li>
+              <li>Internal lift is lowered all the way down.</li>
+              <li>Trapdoor is closed, and the delivery door unlocks.</li>
+            </ol>
+          </div>
+          <div class="col-2 u-center">
+            <img class="ug-img" src="assets/img/all-parts-forever.gif">
+          </div>
+        </div>
+        <div class="space"></div>
+        <h6>Inside the Mailbox</h6>
+        <p>The DeliverED Home mailbox is made up of two sections – the delivery compartment and the secure compartment. The delivery section is the top door of the device where packages can be placed inside by couriers. This section can be locked by
+          the app to prevent deliveries if you’re not expecting any, and when the mailbox is full. The secure section is where your packages are stored, accessible via the bottom door. This door is always locked, unless opened via the DeliverED app
+          or emergency manual key. Inside you will find your packages neatly piled up on top of a lift mechanism that is used during the delivery process. How to perform actions using the app is detailed under <a class="u u-C blue-link"
+            href="#the-app">The App</a>.
+        </p>
+        <div class="row">
+          <div class="col-4">
+            <figure class="fig">
+              <video controls poster="assets/img/poster.png">
+                <source src="assets/vid/trapdoor.mp4" type="video/mp4" />
+              </video>
+              <figcaption class="fig-caption u-text-center">
+                Video 1: The Collapsible Door
+              </figcaption>
+            </figure>
+          </div>
+          <div class="col-4">
+            <figure class="fig">
+              <video controls poster="assets/img/poster.png">
+                <source src="assets/vid/forklift.mp4" type="video/mp4" />
+              </video>
+              <figcaption class="fig-caption u-text-center">
+                Video 2: The Forklift
+              </figcaption>
+            </figure>
+          </div>
+          <div class="col-4">
+            <figure class="fig">
+              <video controls poster="assets/img/poster.png">
+                <source src="assets/vid/lock.mp4" type="video/mp4" />
+              </video>
+              <figcaption class="fig-caption u-text-center">
+                Video 3: Lock/Unlock Secure Compartment
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="space"></div>
+
+        <h6>Functionality Breakdown</h6>
+        <div class="row">
+          <div class="col-3">
+            <div class="space"></div>
+            <figure class="fig">
+              <img src="assets/img/webots.PNG" class="rounded" style="border: 3px solid #e2737d">
+              <figcaption class="fig-caption u-text-center">
+                Figure 0: All Components
+              </figcaption>
+            </figure>
+          </div>
+          <div class="col-9">
+            <div class="row">
+              <div class="col-3">
+                <figure class="fig">
+                  <img src="assets/img/photon.jpg" class="rounded">
+                  <figcaption class="fig-caption u-text-center">
+                    Figure 1: Particle Photon
+                  </figcaption>
+                </figure>
+                <figure class="fig">
+                  <img src="assets/img/trapdoor.png" class="rounded">
+                  <figcaption class="fig-caption u-text-center">
+                    Figure 5: Bascule Collapsible Door
+                  </figcaption>
+                </figure>
+              </div>
+              <div class="col-3">
+                <figure class="fig">
+                  <img src="assets/img/lock.jpg" class="rounded">
+                  <figcaption class="fig-caption u-text-center">
+                    Figure 2: Solenoid Lock
+                  </figcaption>
+                </figure>
+                <figure class="fig">
+                  <img src="assets/img/psu.png" class="rounded">
+                  <figcaption class="fig-caption u-text-center">
+                    Figure 6: 8-Way AA Battery Supply
+                  </figcaption>
+                </figure>
+              </div>
+              <div class="col-3">
+                <figure class="fig">
+                  <img src="assets/img/yale.jpg" class="rounded">
+                  <figcaption class="fig-caption u-text-center">
+                    Figure 3: Yale Key Lock
+                  </figcaption>
+                </figure>
+              </div>
+              <div class="col-3">
+                <figure class="fig">
+                  <img src="assets/img/forklift.png" class="rounded">
+                  <figcaption class="fig-caption u-text-center">
+                    Figure 4: Forklift
+                  </figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+        </div>
+        <strong>Particle Photon Microcontroller:</strong> (See Figure 1) The brains of the device, this tiny IoT device communicates with
+        the cloud to allow you to talk to your mailbox from the DeliverED app. It is fixed below the lift, and you will find many
+        internal wires connected to it. <br><br>
+        <strong>Collapsible Floor:</strong> (See Figure 5) The floor of the delivery section works as a trapdoor, consisting of some rotating shafts and a spring mechanism. When released, a package falls through to the secure section. <br><br>
+        <strong>Lift Mechanism:</strong> (See Figure 4) The moving platform is attached to the back of the device, where a Lego EV3
+        motor powers several shafts which rotate to move two tank-style tracks up and down. The platform is attached to these,
+        moving with them. <br><br>
+        <strong>Solenoid:</strong> (See Figure 2) There are two of these in the system, one for each door. They function as the locks on
+        the device, controlled electronically to either pull in or push out a small metal rod which controls the state of the doors. <br><br>
+        <strong>Infrared Sensor:</strong> (See Figure 4) These are used to detect when a package is in the way, allowing for internal calculations of when to stop the platform from rising any further. <br><br>
+        <strong>Yale key mechanism:</strong> (See Figure 3) This functions as the emergency manual unlock for the secure section. When the
+        correct key is inserted, the door is unlocked. This overrides any signal being given to the solenoid and is primarily used
+        if the system has run out of power. <br><br>
+        <div id="the-app"></div>
+        <strong>8-Way AA Power Supply:</strong> (See Figure 6) This is what powers the the Particle Photon and all the components of
+        the mailbox - the infrared sensors, the solenoid lock, the forklift and the collapsible door. <br><br>
+        <strong>Delivery button:</strong> This is visible on the outside of the device and is a simple button that when pressed sends a signal
+        to the Photon. This triggers a function within the device that begins the delivery sequence so long as it also detects that
+        the delivery door is locked.
+
+        <div class="space"></div>
+        <div class="space"></div>
+
+        <h6>The App</h6>
+        <p>
+          Since our users will control and use our mailboxes entirely through our app, we have taken care to make our User Interface as accessible and usable as possible, to ensure that our device is optimised for use by everyone. We have taken care
+          to make everyday actions like unlocking and locking your mailbox as easy as possible, with little to no app navigation necessary. Our blue and green colour scheme gives our users a sense of security, which is extremely important when
+          trusting an automated machine to handle personal parcels. <br>
+          <br>Our app communicates directly with our mailboxes via a particle photon. Each mailbox has its own photon, with a unique ID used to identify and register your device. This connection facilitates all sensors and actions carried out by the
+          physical device. Photons communicate via the cloud, so there is no need for us to be storing any personal data of our users, which we believe is a huge selling point for our devices. <br>
+          The major use cases of our app are detailed below:
+        </p>
+        <div class="row">
+          <div class="col-10 offset-1">
+            <figure class="fig">
+              <img src="assets/img/screens.png" alt="">
+              <figcaption class="fig-caption u-text-center">
+                Figure 7: Android App Screens
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+        <div class="space"></div>
+        <strong>Managing Your Account</strong>
+        <p><i><strong>Logging In <span style="color:red">(See items 1 and 2)</span></strong></i>
+          <br>
+          Before you can control a device, you need to create an account with us! To do this, we ask you to log into our app using your Google account. Since you are using an Android phone, your phone should remember your login details! If you
+          don’t want to use this account, you can choose to log in with a new existing Google account, or create a new one (if you have already made an account with us, just login using the same Google account).
+        <blockquote>
+          By logging in, you agree to our <a href="#privacy-policy" class="u u-C blue-link">Privacy Policy</a>
+        </blockquote>
+        Upon successfully logging in you will be brought to the Device Manager/Home Screen. This is where you can view all the devices (mailboxes) you have connected to your account. If you have just created your account, you
+        will see no devices here yet!
+        <br><br>
+        <i><strong>Logging Out / Switching Account <span style="color:red">(See item 3)</span></strong></i>
+        <br>
+        If you wish to log out of the app, or switch accounts, navigate to your Profileby tapping the avatar (right-most) icon on the navigation bar located at the bottom of your screen. Then tap ‘Log out’ and confirm your action! You will be
+        brought back to the login screen.
+        <br><br>
+        </p>
+        <strong>Managing Your Devices</strong>
+        <p>Navigate to the Home Screen by tapping the home (left-most) icon on the navigation bar located at the bottom of your screen.
+          <br><br>
+          <i><strong>Adding A Delivered Home Mailbox <span style="color:red">(See items 4 and 5)</span></strong></i>
+          <br>
+          To add a new mailbox, tap the ‘Add Device’ button and scan the QR code
+          . This will grab the mailbox’s ID and autofill
+          the necessary information all for you! Alternatively, you can type in the ID yourself. Now that you have the device
+          credentials, you can save these options and operate your new mailbox!
+          <br><br>
+          <i><strong>Removing A Delivered Home Mailbox <span style="color:red">(See items 6, 7 and 8)</span></strong></i>
+        <blockquote style="color: red; background-color: rgb(247, 215, 220); border-left: 5px solid red;">Proceed with caution <i class="tile-icon icon fa fa-exclamation-circle"></i></blockquote>
+        Choose the mailbox you wish to proceed with and then, tap the red ‘Remove Device’ button and confirm your action.
+        You will now see your device is removed from your Home Screen! <br><br>
+        </p>
+        <p>
+          <i><strong>Accepting Your Deliveries <span style="color:red">(See items 6, 7 and 9)</span></strong></i>
+          <br>
+          In order to accept deliveries, you must keep the ‘Delivery Door’ unlocked. To do so, choose the mailbox you wish to
+          proceed with and tap the ‘Open’ button. Your mailbox is now ready to accept deliveries!
+          <br><br>
+          <i><strong>Prevent Deliveries <span style="color:red">(See items 6, 7 and 9)</span></strong></i>
+          <br>
+          In order to accept deliveries, you must keep the ‘Delivery Door’ locked. To do so, choose the mailbox you wish to
+          proceed with and tap the ‘Close’ button. Your mailbox is now ready to accept deliveries!
+          <br><br>
+          <i><strong>Accessing Your Deliveries <span style="color:red">(See items 6 and 10)</span></strong></i>
+          <br>
+          Choose the mailbox you wish to proceed with and then tap ‘Unlock’. You will now be able to open the delivery door and
+          collect your parcel!
+          <br>
+          <i><span style="color:red">Important:</span> Remember to lock your device again by tapping ‘Lock’ located beside ‘Unlock’!</i>
+          <br><br>
+          <i><strong>Change Your Device Name <span style="color:red">(See items 6, 7, 11)</span></strong></i>
+          <br>
+          Choose the mailbox you wish to proceed with and tap the textbox beside ‘Device name’. Now simply type in what you like! Tap the ‘Save’ button located underneath the users to submit
+          <br><br>
+          <i><strong>Remove A User With Access To Your Device <span style="color:red">(See items 6, 7, 12)</span></strong></i>
+          <br>
+          Choose the mailbox you wish to proceed with, then tap the checkbox beside a users name. Tap ‘Save’ button located
+          underneath the users to confirm their removal.
+          <br><br>
+        </p>
+        <strong>Mailbox Notifications <span style="color:red">(See item 13)</span></strong>
+        <p>
+          Navigate to the Notifications by tapping the bell (middle) icon on the navigation bar located at the bottom of
+          your screen. You can dismiss notifications by swiping them to the left and filter notifications by device via the dropdown!
+        </p>
+        <strong>Help <span style="color:red">(See items 14 and 15)</span></strong>
+        <p>
+          To find help at any time, tap the <i class="tile-icon icon fa fa-question-circle"></i> at the top right of your screen. Here you can scroll through
+          FAQs and read our full user guide. If you still need help, contact our user support via the text box at the bottom!
+        </p>
+
+        <div class="space"></div>
+
+        <div class="row">
+          <div class="col-2"></div>
+          <div class="col-4 u-center">
+            <figure class="fig">
+              <img style="height:300px" src="assets/img/leaflet-front-nobg.png">
+              <figcaption class="fig-caption u-text-center">
+                Figure 8: Leaflet (Front)
+              </figcaption>
+            </figure>
+          </div>
+          <div class="col-4 u-center">
+            <figure class="fig">
+              <img style="height:300px" src="assets/img/leaflet-back-nobg.png">
+              <figcaption class="fig-caption u-text-center">
+                Figure 9: Leaflet (Back)
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="btn-group" style="width:100%">
+          <button class="btn-info header-btn" onclick="location.href='user-guide.html'">Online User Guide</button>
+          <button class="btn-primary" onclick="location.href='assets/files/group-19-userguide.pdf'">Download PDF</button>
+          <button class="outline btn-primary" onclick="location.href='assets/files/leaflet.pdf'">Leaflet</button>
+        </div>
+        <div class="space"></div>
+      </div>
+
+      <div class="space"></div>
+    </div>
+  </div>
+
+  <div class="section" id="budget">
+    <div class="section-content card">
+      <div class="card-head">
+        <h3 class="page-head"><i class="icon icon-title fa fa-wrapper fa-coins"></i>Budget</h3>
+      </div>
+      <div class="card-content">
+        <div class="row">
+          <div class="col-6 offset-3 u-none-xs u-none-sm-only">
+            <div class="u-center">
+              <img src="assets/img/price.png">
+            </div>
+          </div>
+
+          <div class="col-12 u-none-sm">
+            <div class="u-center">
+              <img src="assets/img/price.png">
+            </div>
+          </div>
+        </div>
+
+        <div class="row u-none-xs u-none-sm-only">
+          <div class="col-4 offset-1">
+            <div class="divider"></div>
+          </div>
+          <div class="col-2">
+            <h6 class="divider-title">Real Build Breakdown</h6>
+          </div>
+          <div class="col-4">
+            <div class="divider"></div>
+          </div>
+        </div>
+
+        <div class="space u-none-sm"></div>
+
+        <div class="row u-none-sm">
+          <div class="col-xs-4">
+            <div class="divider"></div>
+          </div>
+          <div class="col-xs-4">
+            <h6 class="divider-title">Real Build Breakdown</h6>
+          </div>
+          <div class="col-xs-4">
+            <div class="divider"></div>
+          </div>
+        </div>
+
+        <div class="row" style="overflow-x:scroll">
+          <div class="col-12">
+            <h6>The Walls</h6>
+            <p>
+              For the walls of the mailbox, we can use
+              stainless steel<sup><a class="u u-C blue-link"
+                  href="https://uk.rs-online.com/web/p/metal-sheets/0559111/?cm_mmc=UK-PLA-DS3A-_-google-_-PLA_UK_EN_Engineering_Materials_%26_Industrial_Hardware_Whoop-_-Stainless%20Steel%20Sheets_Whoop-_-559111&gclid=CjwKCAjw3pWDBhB3EiwAV1c5rNEwPtiD05Ts7fbEI-cH-itfk6fUxlKepf4HNEEZbpT5zayMJCZo2RoCnhkQAvD_BwE&gclsrc=aw.ds&matchtype=&pla-302964212382">1</a></sup>.
+              This will prove to be both sturdy and
+              weather resistant. It is corrosion and erosion resistant,
+              and it will not be easy to cut through. We can also
+              paint it, giving customers an option to customise their
+              mailbox. The price
+              related to this can be ascertained after meeting with
+              our potential production partners.
+            </p>
+            <h6>Movable Platform</h6>
+            <p>We can build the movable platform using stainless steel as well. We will probably
+              have to use more powerful motors as compared to
+              the ones we are using in the workshop. The price related to this can be ascertained after meeting with our
+              potential production partners.
+            </p>
+            <h6>Handyperson for installation</h6>
+            <p>
+              We suggest 2 people for
+              2 hours for installing the smart mailbox according to
+              the customers’ preference. The average hourly rate of
+              a handyman is £11.71<sup><a class="u u-C blue-link" href="https://www.payscale.com/research/UK/Job=Handyman/Hourly_Rate.">2</a></sup>. So the total installation fee
+              will be £46.84.
+            </p>
+            <h6>UV Sterilizer LED</h6>
+            <p>We expect there to be 2 such
+              LEDs (110 V, US) on 2 opposite walls (the ones adjacent to the access doors). The total comes to £24.02
+              (£12.01 each)<sup><a class="u u-C blue-link"
+                  href="https://uk.banggood.com/50W-UV-LED-Ultraviolet-Sterilizer-Lamp-Germicidal-Disinfection-Mite-Removal-p-1685241.html?utm_source=googleshopping&utm_medium=cpc_organic&gmcCountry=GB&utm_content=minha&utm_campaign=minha-gbg-en-pc&currency=GBP&cur_warehouse=CN&createTmp=1&utm_source=googleshopping&utm_medium=cpc_bgs&utm_content=sxxx&utm_campaign=sxxx-ssc-gbg-all-newcustom-ncv80-0928&ad_id=468370263002&gclid=CjwKCAiAgc-ABhA7EiwAjev-j24qHFNyqYHWovR-0uR6sUqkLh0BnBq5BSeRZAGhFRHUdECgRBSD2BoCOLMQAvD_BwE&ID=566615">3</a>.
+            </p>
+            <h6>Locks</h6>
+            <p>All materials for the lock are expected to remain the same, although upon a future round of testing
+              (hypothetically) if we find that the locks are not sturdy
+              enough to withstand brute force, we might have to
+              look at certain improvements, although the core mechanisms stay the same. The cost for building the current
+              electromagnetic locks have been included in the budget.
+            </p>
+            <h6>Bascule trap door / collapsible platform</h6>
+            <p>This platform separates the drop-off area and the secure compartment. We can use RSPro struts, which are £41 per
+              metre and angle joints for RSPro struts, which are £5
+              each<sup><a class="u u-C blue-link" href="http://www.inf.ed.ac.uk/teaching/courses/sdp/SDP2020/sdppricelist.pdf">4</a></sup>.
+            </p>
+            <h6>Particle Photon</h6>
+            <p>
+              The IoT computer responsible for taking commands from our app and controlling the mailbox.
+            </p>
+            <h6>Power Supply</h6>
+            <p>
+              As apposed to the 8-way AA power supply we're currently using in our prototype, we would use a LIPO Battery 11.1V 1800mAh LB-012<sup><a class="u u-C blue-link"
+                  href="https://www.robotis.us/lipo-battery-11-1v-1800mah-lb-012/">5</a></sup>.
+              This would provide us with the long battery life we desired.
+            </p>
+          </div>
+        </div>
+
+        <div class="space"></div>
+
+        <div class="row u-none-xs u-none-sm-only">
+          <div class="col-4 offset-1">
+            <div class="divider"></div>
+          </div>
+          <div class="col-2">
+            <h6 class="divider-title">Development Breakdown</h6>
+          </div>
+          <div class="col-4">
+            <div class="divider"></div>
+          </div>
+        </div>
+
+        <div class="space u-none-sm"></div>
+
+        <div class="row u-none-sm">
+          <div class="col-xs-4">
+            <div class="divider"></div>
+          </div>
+          <div class="col-xs-4">
+            <h6 class="divider-title">Development Breakdown</h6>
+          </div>
+          <div class="col-xs-4">
+            <div class="divider"></div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12">
+            <p>Over the course of development, changes were made to our original vision of the project which significantly impacted our budget. Some of the smaller changes included adding extra sensors, such as infrared, which was a decision made
+              after the initial planning process. The updated budget also takes technical time into account, which was something we were unsure of our ability to use at the stage of Demo 1, as we were considering using solely Webots simulation and no
+              physical hardware.
+            </p>
+            <p>A more significant design change was going from our initial idea of a scissor lift to a forklift, to handle the inner platform of the mailbox. One of the huge deciding factors of this, other than the obvious hardware limitations, was
+              the fact that even folded down all the way, the scissor lift would take up a significant portion of the height of the mailbox, reducing its ability to hold parcels. The forklift on the other hand is simply a moving platform, and takes
+              up significantly less room. It is also a lot easier to use infrared sensors with a forklift, as there is only one moving component, and no supporting scaffolding.
+            </p>
+            <p>Some of the potential security risks involved with our product came to our attention later in development, which led us to rethink our door locking mechanisms. Our initial plan was a magnetic lock, which is something we have stuck
+              with, but we have now taken care to include a heavy-duty deadbolt lock as well, which would act in the event of power failure. This is to prevent an unpowered mailbox being left unlocked and at risk.</p>
+          </div>
+        </div>
+
+        <div class="row" style="overflow-x:scroll">
+          <div class="col-6">
+            <figure class="fig">
+              <table class="table  small bordered">
+                <thead>
+                  <tr>
+                    <th><abbr title="Title1">Item</abbr></th>
+                    <th><abbr title="Title2">#</abbr></th>
+                    <th><abbr title="Title3">Cost (£GBP)</abbr></th>
+                  </tr>
+                </thead>
+                <tfoot>
+                  <tr>
+                    <th><abbr title="Title1">Item</abbr></th>
+                    <th><abbr title="Title2">#</abbr></th>
+                    <th><abbr title="Title3">Cost (£GBP)</abbr></th>
+                  </tr>
+                </tfoot>
+                <tbody>
+                  <tr>
+                    <th>Lift Motor</th>
+                    <td>1</td>
+                    <td>27.05</td>
+                  </tr>
+                  <tr>
+                    <th>6mm+8mm Bright Steel Round Bar</th>
+                    <td>1</td>
+                    <td>15.00</td>
+                  </tr>
+                  <tr>
+                    <th>MDF (per 8ft x 6ft x 12mm sheet)</th>
+                    <td>1</td>
+                    <td>11.00</td>
+                  </tr>
+                  <tr>
+                    <th>12mm Thk T6 Aluminium Plate </th>
+                    <td>1</td>
+                    <td>10.00</td>
+                  </tr>
+                  <tr>
+                    <th>3D printed material (5p per gram)</th>
+                    <td>1</td>
+                    <td>2.50</td>
+                  </tr>
+                  <tr>
+                    <th>ON Semi PN2222ATA NPN Transistor</th>
+                    <td>4</td>
+                    <td>0.80</td>
+                  </tr>
+                  <tr>
+                    <th>ON Semi 2N4403TA PNP Transistor</th>
+                    <td>2</td>
+                    <td>0.16</td>
+                  </tr>
+                  <tr>
+                    <th>Nichicon 1F Electrolytic Capacitor</th>
+                    <td>1</td>
+                    <td>0.75</td>
+                  </tr>
+                  <tr>
+                    <th>Vishay 50V 1A, Diode 1N4001-E3/54</th>
+                    <td>4</td>
+                    <td>0.80</td>
+                  </tr>
+                  <tr>
+                    <th>Custom PCB</th>
+                    <td>1</td>
+                    <td>2.00</td>
+                  </tr>
+                  <tr>
+                    <th>Steel Plates</th>
+                    <td>6</td>
+                    <td>45.00</td>
+                  </tr>
+                  <tr>
+                    <th>UV Sterilizer LED</th>
+                    <th>2</td>
+                    <td>18.30</d>
+                  </tr>
+                  <tr>
+                    <th>Door Spindle</th>
+                    <td>1</td>
+                    <td>8.40</td>
+                  </tr>
+                  <tr>
+                    <th>Magnetic Lock</th>
+                    <td>1</td>
+                    <td>7.00</td>
+                  </tr>
+                  <tr>
+                    <th>6mm Springs</th>
+                    <td>4</td>
+                    <td>12.00</td>
+                  </tr>
+                  <tr>
+                    <th>Particle Photon</th>
+                    <td>1</td>
+                    <td>14.34</d>
+                  </tr>
+                  <tr>
+                    <th>TOTAL</th>
+                    <th>-</th>
+                    <th>175.10</th>
+                  </tr>
+                </tbody>
+              </table>
+              <figcaption class="fig-caption u-text-center">
+                Table 2: Demo 1 Cost Breakdown
+              </figcaption>
+            </figure>
+          </div>
+          <div class="col-6">
+            <figure class="fig">
+              <table class="table  small bordered">
+                <thead>
+                  <tr>
+                    <th><abbr title="Title1">Item</abbr></th>
+                    <th><abbr title="Title2">#</abbr></th>
+                    <th><abbr title="Title3">Cost (£GBP)</abbr></th>
+                  </tr>
+                </thead>
+                <tfoot>
+                  <tr>
+                    <th><abbr title="Title1">Item</abbr></th>
+                    <th><abbr title="Title2">#</abbr></th>
+                    <th><abbr title="Title3">Cost (£GBP)</abbr></th>
+                  </tr>
+                </tfoot>
+                <tbody>
+                  <tr>
+                    <th>Metal Work [Lock]</th>
+                    <td>2</td>
+                    <td>20.00</td>
+                  </tr>
+                  <tr>
+                    <th>Standard Deadbolt Lock</th>
+                    <td>2</td>
+                    <td>50.00</td>
+                  </tr>
+                  <tr>
+                    <th>Solenoid</th>
+                    <td>2</td>
+                    <td>50.00</td>
+                  </tr>
+                  <tr>
+                    <th>Electronics And Wiring [Lock]</th>
+                    <td>-</td>
+                    <td>10.00</td>
+                  </tr>
+                  <tr>
+                    <th>Motor [Fork Lift]</th>
+                    <td>1</td>
+                    <td>35.00</td>
+                  </tr>
+                  <tr>
+                    <th>Lego Set [Fork Lift]</th>
+                    <td>1</td>
+                    <td>15.00</td>
+                  </tr>
+                  <tr>
+                    <th>Motor Board [Fork Lift]</th>
+                    <td>1</td>
+                    <td>10.00</td>
+                  </tr>
+                  <tr>
+                    <th>Basic Sensors</th>
+                    <td>-</td>
+                    <td>10.00</td>
+                  </tr>
+                  <tr>
+                    <th>Advanced Sensors</th>
+                    <td>-</td>
+                    <td>30.00</td>
+                  </tr>
+                  <tr>
+                    <th>Encoder Board [Fork Lift]</th>
+                    <td>1</td>
+                    <td>10.00</td>
+                  </tr>
+                  <tr>
+                    <th>Miscellaneous [Fork Lift]</th>
+                    <td>-</td>
+                    <td>10.00</td>
+                  </tr>
+                  <tr>
+                    <th>Particle Photon</th>
+                    <td>1</td>
+                    <td>18.67</td>
+                  </tr>
+                  <tr>
+                    <th>Technician time [Fork Lift]</th>
+                    <td>-</td>
+                    <td>3 hours*</td>
+                  </tr>
+                  <tr>
+                    <th>TOTAL</th>
+                    <th>-</th>
+                    <th>258.67</th>
+                  </tr>
+                </tbody>
+              </table>
+              <figcaption class="fig-caption u-text-center">
+                Table 3: Demo 4 Cost Breakdown (*Technician time budget is in hours, not £GBP)
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-6 u-center">
+            <div id="piechart-budget"></div>
+          </div>
+          <div class="col-6 u-center">
+            <div id="piechart-tech"></div>
+          </div>
+        </div>
+
+        <div class="space"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" id="team">
+    <div class="section-content card">
+      <div class="card-head">
+        <h3 class="page-head"><i class="icon icon-title fa fa-wrapper fa-users"></i>Team</h3>
+      </div>
+      <div class="card-content">
+        <div class="space"></div>
+        <div class="card-para">
+          <p>Meet our team! We are the group of 8 Informatics students behind the development of DeliverED Home, studying at The Univeristy of Edinburgh. Feel free to contact us via our social media links below!</p>
+        </div>
+
+        <div class="row u-none-xs u-none-sm-only">
+          <div class="col-4 offset-1">
+            <div class="divider"></div>
+          </div>
+          <div class="col-2">
+            <h6 class="divider-title">Members and Roles</h6>
+          </div>
+          <div class="col-4">
+            <div class="divider"></div>
+          </div>
+        </div>
+
+        <div class="space u-none-sm"></div>
+
+        <div class="row u-none-sm">
+          <div class="col-xs-4">
+            <div class="divider"></div>
+          </div>
+          <div class="col-xs-4">
+            <h6 class="divider-title">Members and Roles</h6>
+          </div>
+          <div class="col-xs-4">
+            <div class="divider"></div>
+          </div>
+        </div>
+
+        <div class="space"></div>
+
+        <div class="row">
+          <!-- Column 1 -->
+          <div class="col-xl-6 u-center">
+            <!-- Hallelujah -->
+            <div class="tile m-0 level">
+              <div class="tile__icon">
+                <figure class="avatar avatar--xlarge" data-text="Hk" style="background: rgb(12, 74, 119);rgb(96, 129, 212)"></figure>
+              </div>
+              <div class="tile__container">
+                <p class="tile__title m-0">Hallelujah Kebede&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                <p class="tile__subtitle m-0">Software Engineer
+                  <br><br>
+                  <a href="https://github.com/Hallelujah19" class="social-link" target="_blank">
+                    <span class="icon subtitle">
+                      <i class="fab fa-wrapper fa-github"></i>
+                    </span>
+                  </a>
+                  <a href="mailto:H.Kebede@sms.ed.ac.uk" class="social-link" target="_blank">
+                    <span class="icon subtitle">
+                      <i class="fa fa-wrapper fa-envelope-open"></i>
+                    </span>
+                  </a>
+                </p>
+              </div>
+            </div>
+            <div class="space"></div>
+            <div class="space"></div>
+
+            <!-- Harry -->
+            <div class="tile m-0 level">
+              <div class="tile__icon">
+                <figure class="avatar avatar--xlarge" data-text="Hl" style="background: rgb(12, 74, 119);"></figure>
+              </div>
+              <div class="tile__container">
+                <p class="tile__title m-0">Harry Lennox&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                <p class="tile__subtitle m-0">Hardware Engineer
+                  <br><br>
+                  <a href="https://github.com/Llenn0" class="social-link" target="_blank">
+                    <span class="icon subtitle">
+                      <i class="fab fa-wrapper fa-github"></i>
+                    </span>
+                  </a>
+                  <a href="mailto:H.J.Lennox@sms.ed.ac.uk" class="social-link" target="_blank">
+                    <span class="icon subtitle">
+                      <i class="fa fa-wrapper fa-envelope-open"></i>
+                    </span>
+                  </a>
+                </p>
+              </div>
+            </div>
+            <div class="space"></div>
+            <div class="space"></div>
+
+            <!-- Hrichika -->
+            <div class="tile m-0 level">
+              <div class="tile__icon">
+                <figure class="avatar avatar--xlarge"><img src="assets/img/hrichika.png"></figure>
+              </div>
+              <div class="tile__container">
+                <p class="tile__title m-0">Hrichika Nag&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                <p class="tile__subtitle m-0">Hardware Engineer,<br>Market Research
+                  <br><br>
+                  <a href="https://github.com/hrichikanag" class="social-link" target="_blank">
+                    <span class="icon subtitle">
+                      <i class="fab fa-wrapper fa-github"></i>
+                    </span>
+                  </a>
+                  <a href="mailto:H.Nag@sms.ed.ac.uk" class="social-link" target="_blank">
+                    <span class="icon subtitle">
+                      <i class="fa fa-wrapper fa-envelope-open"></i>
+                    </span>
+                  </a>
+                </p>
+              </div>
+            </div>
+            <div class="space"></div>
+            <div class="space"></div>
+
+            <!-- Chris -->
+            <div class="tile m-0 level">
+              <div class="tile__icon">
+                <figure class="avatar avatar--xlarge"><img src="assets/img/chris.jpg"></figure>
+              </div>
+              <div class="tile__container">
+                <p class="tile__title m-0">Chris Perceval-Maxwell</p>
+                <p class="tile__subtitle m-0"><span style="font-weight:800">(he/him)</span> <br>
+                  UI & Graphic Design,<br>Co-Product Manager
+                  <br><br>
+                  <a href="https://github.com/cpuved" class="social-link" target="_blank">
+                    <span class="icon subtitle">
+                      <i class="fab fa-wrapper fa-github"></i>
+                    </span>
+                  </a>
+                  <a href="https://linkedin.com/in/chris-jpm" class="social-link" target="_blank">
+                    <span class="icon subtitle">
+                      <i class="fab fa-wrapper fa-linkedin"></i>
+                    </span>
+                  </a>
+                  <a href="mailto:s1839592@ed.ac.uk" class="social-link" target="_blank">
+                    <span class="icon subtitle">
+                      <i class="fa fa-wrapper fa-envelope-open"></i>
+                    </span>
+                  </a>
+                </p>
+              </div>
+            </div>
+            <div class="space"></div>
+            <div class="space"></div>
+          </div>
+
+          <!-- Column 2 -->
+          <div class="col-xl-6 u-center">
+            <!-- Amy -->
+            <div class="tile m-0 level">
+              <div class="tile__icon">
+                <figure class="avatar avatar--xlarge"><img src="assets/img/amy.jpg"></figure>
+              </div>
+              <div class="tile__container">
+                <p class="tile__title m-0">Amy Rafferty&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                <p class="tile__subtitle m-0">UI Design,<br>Co-Product Manager
+                  <br><br>
+                  <a href="https://github.com/AmyRaff" class="social-link" target="_blank">
+                    <span class="icon subtitle">
+                      <i class="fab fa-wrapper fa-github"></i>
+                    </span>
+                  </a>
+                  <a href="https://www.linkedin.com/in/amy-rafferty-495490166/" class="social-link" target="_blank">
+                    <span class="icon subtitle">
+                      <i class="fab fa-wrapper fa-linkedin"></i>
+                    </span>
+                  </a>
+                  <a href="mailto:s1817812@ed.ac.uk" class="social-link" target="_blank">
+                    <span class="icon subtitle">
+                      <i class="fa fa-wrapper fa-envelope-open"></i>
+                    </span>
+                  </a>
+                </p>
+              </div>
+            </div>
+            <div class="space"></div>
+            <div class="space"></div>
+
+            <!-- Huacheng -->
+            <div class="tile m-0 level">
+              <div class="tile__icon">
+                <figure class="avatar avatar--xlarge"><img src="assets/img/huacheng.png"></figure>
+              </div>
+              <div class="tile__container">
+                <p class="tile__title m-0">Huacheng Song&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                <p class="tile__subtitle m-0">UI Design,<br>Software Engineer
+                  <br><br>
+                  <a href="https://github.com/zico5288" class="social-link" target="_blank">
+                    <span class="icon subtitle">
+                      <i class="fab fa-wrapper fa-github"></i>
+                    </span>
+                  </a>
+                  <a href="mailto:H.Song-9@sms.ed.ac.uk" class="social-link" target="_blank">
+                    <span class="icon subtitle">
+                      <i class="fa fa-wrapper fa-envelope-open"></i>
+                    </span>
+                  </a>
+                </p>
+              </div>
+            </div>
+            <div class="space"></div>
+            <div class="space"></div>
+
+            <!-- Yizhou -->
+            <div class="tile m-0 level">
+              <div class="tile__icon">
+                <figure class="avatar avatar--xlarge" data-text="Yy" style="background: rgb(12, 74, 119);"></figure>
+              </div>
+              <div class="tile__container">
+                <p class="tile__title m-0">Yizhou Yang&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                <p class="tile__subtitle m-0">Software Engineer
+                  <br><br>
+                  <a href="https://github.com/cxunka" class="social-link" target="_blank">
+                    <span class="icon subtitle">
+                      <i class="fab fa-wrapper fa-github"></i>
+                    </span>
+                  </a>
+                  <a href="mailto:Y.Yang-130@sms.ed.ac.uk" class="social-link" target="_blank">
+                    <span class="icon subtitle">
+                      <i class="fa fa-wrapper fa-envelope-open"></i>
+                    </span>
+                  </a>
+                </p>
+              </div>
+            </div>
+            <div class="space"></div>
+            <div class="space"></div>
+
+            <!-- Neo -->
+            <div class="tile m-0 level">
+              <div class="tile__icon">
+                <figure class="avatar avatar--xlarge"><img src="assets/img/neo.png"></figure>
+              </div>
+              <div class="tile__container">
+                <p class="tile__title m-0">Neo Zhu&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                <p class="tile__subtitle m-0">Webots Engineer
+                  <br><br>
+                  <a href="https://github.com/SpaceHunterInf" class="social-link" target="_blank">
+                    <span class="icon subtitle">
+                      <i class="fab fa-wrapper fa-github"></i>
+                    </span>
+                  </a>
+                  <a href="mailto:X.Zhu-29@sms.ed.ac.uk" class="social-link" target="_blank">
+                    <span class="icon subtitle">
+                      <i class="fa fa-wrapper fa-envelope-open"></i>
+                    </span>
+                  </a>
+                </p>
+              </div>
+            </div>
+            <div class="space"></div>
+            <div class="space"></div>
+          </div>
+        </div>
+
+        <div class="row u-none-xs u-none-sm-only">
+          <div class="col-4 offset-1">
+            <div class="divider"></div>
+          </div>
+          <div class="col-2">
+            <h6 class="divider-title">Development Tools</h6>
+          </div>
+          <div class="col-4">
+            <div class="divider"></div>
+          </div>
+        </div>
+
+        <div class="space u-none-sm"></div>
+
+        <div class="row u-none-sm">
+          <div class="col-xs-4">
+            <div class="divider"></div>
+          </div>
+          <div class="col-xs-4">
+            <h6 class="divider-title">Development Tools</h6>
+          </div>
+          <div class="col-xs-4">
+            <div class="divider"></div>
+          </div>
+        </div>
+
+        <div class="space"></div>
+
+        <div class="row">
+          <div class="col-4">
+            <div class="placeholder h-100">
+              <div class="u-text-center">
+                <img class="logo" src="assets/img/teams.png">
+                <h6 class="placeholder-title">Microsoft Teams</h6>
+                <p>We used Microsoft Teams to host meetings and exchange files quickly within our Channel provided by the SDP-21 Team. We also used the 'Chats' feature to create small rooms for sub-teams (Design, Software and Hardware) to discuss
+                  their tasks. The SDP-21 Team 'General' channel also provided us with updates quickly and was used to host workshops. Experts had their own channels where we could organise meetings with them.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-4">
+            <div class="placeholder h-100">
+              <div class="u-text-center">
+                <img class="logo" src="assets/img/docs.webp">
+                <h6 class="placeholder-title">Google Docs</h6>
+                <p>We used Google Docs to draft sections of our reports together before transfering them to LaTeX on Overleaf. It is much easier to review edit history and watch current changes occuring on Google Docs as opposed to Overleaf.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-4">
+            <div class="placeholder h-100">
+              <div class="u-text-center">
+                <img class="logo" src="assets/img/overleaf.png">
+                <h6 class="placeholder-title">Overleaf</h6>
+                <p>We used Overleaf to collaborate on our report submissions for the Project Plan and each Demo. the course organisors provided us with templates to fill in.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="space"></div>
+
+        <div class="row">
+          <div class="col-6">
+            <div class="placeholder h-100">
+              <div class="u-text-center">
+                <img class="logo" src="assets/img/trello.png">
+                <h6 class="placeholder-title">Trello</h6>
+                <p>We used Trello to manage our tasks. We approached development with an AGILE strategy, so Trello was very useful as it allowed us to create boards to move tasks between them; the columns being: Backlog, In Progress and Complete.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6">
+            <div class="placeholder h-100">
+              <div class="u-text-center">
+                <img class="logo" src="assets/img/github.webp">
+                <h6 class="placeholder-title">GitHub</h6>
+                <p>We used GitHub to host our code and version control. GitHub allowed many people to collaborate remotely on the same projects and manage conflicts of code - we hosted all our repositories in our <a
+                    href="https://github.com/DeliverED-Home">GitHub Organisation</a>. There is also the added benefit of reverting to old commits if something
+                  breaks or if data is lost.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row u-none-xs u-none-sm-only">
+          <div class="col-4 offset-1">
+            <div class="divider"></div>
+          </div>
+          <div class="col-2">
+            <h6 class="divider-title">Planning</h6>
+          </div>
+          <div class="col-4">
+            <div class="divider"></div>
+          </div>
+        </div>
+
+        <div class="space u-none-sm"></div>
+
+        <div class="row u-none-sm">
+          <div class="col-xs-4">
+            <div class="divider"></div>
+          </div>
+          <div class="col-xs-4">
+            <h6 class="divider-title">Planning</h6>
+          </div>
+          <div class="col-xs-4">
+            <div class="divider"></div>
+          </div>
+        </div>
+
+        <div class="space"></div>
+
+        <div class="row">
+          <div class="col-6">
+            <figure class="fig">
+              <img src="assets/img/gantt1.PNG" class="rounded">
+              <figcaption class="fig-caption u-text-center">
+                Figure 1: Project Plan Gantt Chart
+              </figcaption>
+            </figure>
+            <div class="space"></div>
+            <p class="card-para">
+              As you can see from the Gantt charts in this section, there were some time alterations necessary for our initial plan. In the first demo, we had initially planned to design the website UI, and start designing sections of the app UI. We
+              ended up with a fully designed and partially implemented app UI, as well as a rough design of our website. In terms of our Webots simulation, we had a basic model, which is what we had planned.<br><br>
+              In demo 2, since we were already ahead in terms of our app, we were able to get a fully functioning app front-end, and start testing out the UI. We had initially only planned to have some basic functionalities like navigation at this
+              stage, so this was a huge success by the group. In our initial plan, there was no real mention of commissioning hardware, as we didn’t know if that was something we could do. We ended up commissioning our magnetic lock in this demo, and
+              deciding against using a camera on the front of our device for security reasons. In terms of Webots, we had a simulation showing our device mainframe, which was what we had planned.
+            </p>
+          </div>
+          <div class="col-6">
+            <figure class="fig">
+              <img src="assets/img/gantt2.PNG" class="rounded">
+              <figcaption class="fig-caption u-text-center">
+                Figure 2: Demo 4 Gantt Chart
+              </figcaption>
+            </figure>
+            <div class="space"></div>
+            <p class="card-para">
+              The third demo was more about hardware, and getting our app to communicate with our various components. In our initial plan we mentioned WiFi/Bluetooth module installation, and this ended up coming about in the form of the particle
+              photon, which we installed in this demo. We also commissioned our forklift, and performed testing on the components we had at this stage. We started looking at app-device connectivity, and managed to get a button on our app to turn a
+              LED on a particle photon on/off. This showed real-world interaction which we planned to develop in demo 4. We updated our Webots simulation to include infrared sensors, and updated our website according to plan. There were also
+              revisions to our app UI in response to accessibility and usability workshops, which we could not have foreseen in our initial planning stages. We also created an advertisement video, which we were not initially planning to do.<br><br>
+              The final demo was about getting everything ready to present. We completed our app, website and Webots simulation as planned, but with some minor deviations. We spent time completing QR code scanning for our app, stress testing both our
+              app and simulation, and updating our app UI for further usability changes. These were things we thought to do later in the process, which is why they were not in the initial plan. We also completed our robot-app communication
+              implementation and testing, and performed extensive tests on the hardware components we had commissioned.
+            </p>
+          </div>
+        </div>
+        <button class="btn-link" style="width:100%" onclick="location.href='assets/files/group-19-plan.pdf'">Read Project Plan</button>
+
+        <div class="row u-none-xs u-none-sm-only">
+          <div class="col-4 offset-1">
+            <div class="divider"></div>
+          </div>
+          <div class="col-2">
+            <h6 class="divider-title">Demos</h6>
+          </div>
+          <div class="col-4">
+            <div class="divider"></div>
+          </div>
+        </div>
+
+        <div class="space u-none-sm"></div>
+
+        <div class="row u-none-sm">
+          <div class="col-xs-4">
+            <div class="divider"></div>
+          </div>
+          <div class="col-xs-4">
+            <h6 class="divider-title">Demos</h6>
+          </div>
+          <div class="col-xs-4">
+            <div class="divider"></div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-3">
+            <div class="btn-group" style="width:100%">
+              <button class="btn-primary" onclick="location.href='assets/files/group-19-demo1-report.pdf'">Read Demo 1 Report</button>
+              <button class="outline btn-primary" onclick="location.href='assets/vid/group-19-demo1-video.mp4'">Watch Demo 1 Video</button>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="btn-group" style="width:100%">
+              <button class="btn-primary" onclick="location.href='assets/files/group-19-demo2-report.pdf'">Read Demo 2 Report</button>
+              <button class="outline btn-primary" onclick="location.href='assets/vid/group-19-demo2-video.mp4'">Watch Demo 2 Video</button>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="btn-group" style="width:100%">
+              <button class="btn-primary" onclick="location.href='assets/files/group-19-demo3-report.pdf'">Read Demo 3 Report</button>
+              <button class="outline btn-primary" onclick="location.href='assets/vid/group-19-demo3-video.mp4'">Watch Demo 3 Video</button>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="btn-group" style="width:100%">
+              <button class="btn-primary" onclick="location.href='assets/files/group-19-demo4-report.pdf'">Read Demo 4 Report</button>
+              <button class="outline btn-primary" onclick="location.href='assets/vid/pitch.mp4'">Watch Demo 4 Video</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="space"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" id="evaluation">
+    <div class="section-content card">
+      <div class="card-head">
+        <h3 class="page-head"><i class="icon icon-title fa fa-wrapper fa-vial"></i>Evaluation</h3>
+      </div>
+      <div class="card-content">
+        <p class="card-para">
+          This section contains the results and justifications behind all tests we have performed on our product. This includes tests on our physical hardware, Webots simulation, and app. We have also carried out user testing on our App UI, which is
+          also detailed in this section.
+        </p>
+
+        <div class="row u-none-xs u-none-sm-only">
+          <div class="col-4 offset-1">
+            <div class="divider"></div>
+          </div>
+          <div class="col-2">
+            <h6 class="divider-title">Hardware Testing</h6>
+          </div>
+          <div class="col-4">
+            <div class="divider"></div>
+          </div>
+        </div>
+
+        <div class="space u-none-sm"></div>
+
+        <div class="row u-none-sm">
+          <div class="col-xs-4">
+            <div class="divider"></div>
+          </div>
+          <div class="col-xs-4">
+            <h6 class="divider-title">Hardware Testing</h6>
+          </div>
+          <div class="col-xs-4">
+            <div class="divider"></div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12">
+            <p>
+              We tested the open/closed state of our solenoid by both
+              operating it with our microcontroller and manipulating it
+              manually, then checking the sensor readings for whether
+              they reflect it being pulled in or pushed out. On average,
+              the readings were accurate 4/5 times. We suspect that the
+              sensor readings are not entirely accurate due to some noise
+              present in them. We ran a similar test after manipulating our
+              latch and the latch sensor returned expected values between
+              3/5 and 4/5 times, with some noise accounting for 1 or 2
+              unexpected readings. For each case, we changed states (i.e.,
+              between 0 and 1) 5 times[1]. When returning the state of
+              the above components to the app, we look at readings in
+              groups of 5. If 3 or more readings are the same, we report
+              the state that corresponds to the majority reading.
+            </p>
+            <p>
+              Our remote technition was present at the lab to confirm that our solenoid
+              was working as expected at all points, which means that it
+              was pulled in at our "on" command and pushed out at our
+              "off" command (as was implemented using the microcontroller).
+            </p>
+            <p>
+              We also tested our secure compartment mechanisms which
+              included a forklift driven by a motor and two infrared sensors. One sensor (s1) is at the top of the compartment (at
+              33 cm), pointing across it and mounted onto a wall adjacent
+              to the doors. The other sensor (s2) is at the bottom of the
+              compartment, pointing upwards. If s1 returns less than 19
+              cm (width of the compartment),then we know a parcel has
+              entered the secure compartment. Readings from s2 let us
+              know the distance of the moving platform from the floor.
+            </p>
+            <p>
+              We ran 30 iterations of the movable platform’s upward and
+              downward movement to decide on thresholds of when it
+              should stop. The forklift is about 48 cm high. To allow for
+              the parcel some space to enter the secure compartment and
+              drop into the platform, we stop it at 31-32 cm when going
+              up. We want to stop the platform at a 4-5 cm distance from
+              the floor to avoid it ramming into the sensor s2 when going
+              down.
+            </p>
+            <p>
+              We ran 5 iterations of dropping a single parcel into the
+              movable platform. It stopped after moving down far enough
+              to clear s1’s ’line of vision’ 100% of the time. We ran
+              another 5 iterations with multiple boxes (3), placed one after
+              the other. The forklift moved down as expected 100% of
+              the time. Upon placing a parcel such that s1 returned a
+              reading of less than 19 cm while the moving platform was
+              at 4 cm from the ground, it did not move down any further,
+              which is the desired behaviour. In this state, we are able to
+              raise a flag of "Mailbox is full".
+            </p>
+            <p>
+              We also had to allow for a little noise in our infrared sensors.
+              Sensor s1 gives a reading which sometimes varies between 19 and 20 cm while there is no parcel. We take the lower
+              threshold, i.e., 19 cm, to check against. This worked well
+              for our above test cases. Sensor s2 gives a similar varying
+              reading, which is why we allowed a 1 cm interval when
+              deciding the thresholds as discussed previously.
+            </p>
+          </div>
+        </div>
+
+        <div class="row u-none-xs u-none-sm-only">
+          <div class="col-4 offset-1">
+            <div class="divider"></div>
+          </div>
+          <div class="col-2">
+            <h6 class="divider-title">Simulation Testing</h6>
+          </div>
+          <div class="col-4">
+            <div class="divider"></div>
+          </div>
+        </div>
+
+        <div class="space u-none-sm"></div>
+
+        <div class="row u-none-sm">
+          <div class="col-xs-4">
+            <div class="divider"></div>
+          </div>
+          <div class="col-xs-4">
+            <h6 class="divider-title">Simulation Testing</h6>
+          </div>
+          <div class="col-xs-4">
+            <div class="divider"></div>
+          </div>
+        </div>
+
+        <div class="row" style="overflow-x:scroll">
+          <div class="col-6">
+            <!-- <p>
+              Notification system has been tested. A success in testing
+              represents a notification can be successfully generated by a
+              given HTTP message and then display in alert page. Testing
+              results are shown in the table on the right.
+            </p> -->
+            <p>
+              We ran multiple test for the Webots
+              simulation in order to ensure its robustness and investigate
+              its capacity. Even though its simulation testing, in order
+              to present a real-life scenario, the parcel size and process
+              are strictly following the maximum standard of <a class="u u-C blue-link" href="https://business.help.royalmail.com/app/answers/detail/a_id/89/~/size-and-weight-guide-%E2%80%93-uk-letters-and-parcels">Royal Mail
+                UK Parcels Size and Weight</a>. The length of UV sanitation
+              differs based on parcel size after research <a class="u u-C blue-link" href="https://www.researchgate.net/publication/344204496_Effectiveness_of_222-nm_ultraviolet_light_on_disinfecting_SARS-CoV-2_surface_contamination">(Hiroki
+                Kitagawa,
+                et al.)</a>.
+            </p>
+            <p>
+              From the experiments we could tell that for the current
+              size of the mailbox (75cm*75cm*100cm), it could take 12
+              max-size letters, or 5 max-size small parcels, or 1 max-size medium parcel. Blueprints and actual simulations
+              are provided as screenshots. Though the large size parcel
+              cannot be put into our mailbox, according to Royal Mail
+              standard, large parcel has a length of 1.5 meters, such
+              large parcels (e.g. television, furniture, etc.) are better to be
+              handled in person, which is not considered as our product
+              initiative.
+            </p>
+          </div>
+          <div class="col-6">
+            <div class="space"></div>
+            <figure class="fig">
+              <table class="table small bordered">
+                <thead>
+                  <tr>
+                    <th><abbr title="Title1">Parcel Type</abbr></th>
+                    <th><abbr title="Title2">Total Parcels</abbr></th>
+                    <th><abbr title="Title3">Total Volume (L)</abbr></th>
+                  </tr>
+                </thead>
+                <tfoot>
+                  <tr>
+                    <th><abbr title="Title1">Parcel Type</abbr></th>
+                    <th><abbr title="Title2">Total Parcels</abbr></th>
+                    <th><abbr title="Title3">Total Volume</abbr></th>
+                  </tr>
+                </tfoot>
+                <tbody>
+                  <tr>
+                    <th>Letters</th>
+                    <td>12</td>
+                    <td>132</td>
+                  </tr>
+                  <tr>
+                    <th>Small</th>
+                    <td>5</td>
+                    <td>125</td>
+                  </tr>
+                  <tr>
+                    <th>Medium</th>
+                    <td>1</td>
+                    <td>129</td>
+                  </tr>
+                </tbody>
+              </table>
+              <figcaption class="fig-caption u-text-center">
+                Table 1: Evaluation of maximum capacity of different size parcels
+              </figcaption>
+            </figure>
+            <div class="space"></div>
+            <figure class="fig">
+              <table class="table small bordered">
+                <thead>
+                  <tr>
+                    <th><abbr title="Title1">Parcel Type</abbr></th>
+                    <th><abbr title="Title2">Volume (L)</abbr></th>
+                    <th><abbr title="Title3">Process Time*</abbr></th>
+                    <th><abbr title="Title4">Error (Y/N)</abbr></th>
+                  </tr>
+                </thead>
+                <tfoot>
+                  <tr>
+                    <th><abbr title="Title1">Parcel Type</abbr></th>
+                    <th><abbr title="Title2">Volume (L)</abbr></th>
+                    <th><abbr title="Title3">Process Time*</abbr></th>
+                    <th><abbr title="Title4">Error (Y/N)</abbr></th>
+                  </tr>
+                </tfoot>
+                <tbody>
+                  <tr>
+                    <th>Letter</th>
+                    <td>2.2</td>
+                    <td>5 + 10</td>
+                    <td>N</td>
+                  </tr>
+                  <tr>
+                    <th>Small</th>
+                    <td>25</td>
+                    <td>7 + 20</td>
+                    <td>N</td>
+                  </tr>
+                  <tr>
+                    <th>Medium</th>
+                    <td>129</td>
+                    <td>10 + 30</td>
+                    <td>N</td>
+                  </tr>
+                  <tr>
+                    <th>Large</th>
+                    <td>3375</td>
+                    <td>N/A</td>
+                    <td>Y (Too big)</td>
+                  </tr>
+                </tbody>
+              </table>
+              <figcaption class="fig-caption u-text-center">
+                Table 2: Evaluation of different size parcels (*Process Time is denoted as conveying + UV sanitation)
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="row u-none-xs u-none-sm-only">
+          <div class="col-4 offset-1">
+            <div class="divider"></div>
+          </div>
+          <div class="col-2">
+            <h6 class="divider-title">Software Testing</h6>
+          </div>
+          <div class="col-4">
+            <div class="divider"></div>
+          </div>
+        </div>
+
+        <div class="space u-none-sm"></div>
+
+        <div class="row u-none-sm">
+          <div class="col-xs-4">
+            <div class="divider"></div>
+          </div>
+          <div class="col-xs-4">
+            <h6 class="divider-title">Software Testing</h6>
+          </div>
+          <div class="col-xs-4">
+            <div class="divider"></div>
+          </div>
+        </div>
+
+        <div class="row" style="overflow-x:scroll">
+          <div class="col-6">
+            <!-- <p>
+              Notification system has been tested. A success in testing
+              represents a notification can be successfully generated by a
+              given HTTP message and then display in alert page. Testing
+              results are shown in the table on the right.
+            </p> -->
+            <p>
+              We
+              used <a href="https://developer.android.com/studio/test/monkey" class="blue-link u u-C">Monkey</a> to test the robustness and stability of our Android
+              application. Memory usage and coherence between different classes was considered. The table on the right contains testing of all the
+              functionalities of the application and their testing results.
+            </p>
+            <p>
+              In the test, we found that some functions are highly dependent on the quality of the network. When the network delay
+              is high or the connection is unstable, the functions trying
+              to send HTTP Post will be blocked. At the beginning of
+              the design, if the function corresponding to a button cannot
+              be finished due to network reasons, it will cause the button
+              to be temporarily inaccessible. This is to prevent excessive
+              touches from causing the entire application to become unresponsive. In specific use, although the user cannot touch
+              the functions that are being used, he can touch functions
+              that have not yet been used, such as the navigation bar.
+              The results of the stress test show that the application performs well when it does not involve frequent page switching, but if frequent page switching is performed, some
+              functions will occupy a considerable amount of memory.
+              This is because the App uses a polling method to update the
+              data, and the data on the entire page will re-send the HTTP
+              command to Particle Photon every time it is re-entered.
+              When the data is obtained, the page will not be refreshed
+              immediately, but will be automatically refreshed after the
+              user leaves the page or the page is static for a period of time.
+              Before entering the new interface, the application will also
+              try to obtain updated data.
+            </p>
+          </div>
+          <div class="col-6">
+            <div class="space"></div>
+            <figure class="fig">
+              <table class="table small bordered">
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th><abbr title="Title1">Function Test</abbr></th>
+                    <th><abbr title="Title2"># of Tests</abbr></th>
+                    <th><abbr title="Title3">Error Rate</abbr></th>
+                  </tr>
+                </thead>
+                <tfoot>
+                  <tr>
+                    <th></th>
+                    <th><abbr title="Title1">Function Test</abbr></th>
+                    <th><abbr title="Title2"># of Tests</abbr></th>
+                    <th><abbr title="Title3">Error Rate</abbr></th>
+                  </tr>
+                </tfoot>
+                <tbody>
+                  <tr>
+                    <th rowspan="11"><span>Notifications</span></th>
+                    <th>Locked</th>
+                    <td>1000</td>
+                    <td>1.2%</td>
+                  </tr>
+                  <tr>
+                    <th>Unocked</th>
+                    <td>1000</td>
+                    <td>0.8%</td>
+                  </tr>
+                  <tr>
+                    <th>Received Parcel</th>
+                    <td>1000</td>
+                    <td>0%</td>
+                  </tr>
+                  <tr>
+                    <th>Compartment Full</th>
+                    <td>1000</td>
+                    <td>0%</td>
+                  </tr>
+                  <tr>
+                    <th>Low Charge</th>
+                    <td>1000</td>
+                    <td>0%</td>
+                  </tr>
+                  <tr>
+                    <th>No Charge</th>
+                    <td>1000</td>
+                    <td>0%</td>
+                  </tr>
+                  <tr>
+                    <th>Location Changed</th>
+                    <td>1000</td>
+                    <td>0%</td>
+                  </tr>
+                  <tr>
+                    <th>Connect</th>
+                    <td>1000</td>
+                    <td>0%</td>
+                  </tr>
+                  <tr>
+                    <th>Disconnect from Device</th>
+                    <td>1000</td>
+                    <td>0%</td>
+                  </tr>
+                  <tr>
+                    <th>Paired with Device</th>
+                    <td>1000</td>
+                    <td>2.5%</td>
+                  </tr>
+                  <tr>
+                    <th>Remove Device</th>
+                    <td>1000</td>
+                    <td>4.8%</td>
+                  </tr>
+                  <tr>
+                    <th rowspan="5">Home Page</th>
+                    <th>Lock Device</th>
+                    <td>1000</td>
+                    <td>0%</td>
+                  </tr>
+                  <tr>
+                    <th>Unlock Device</th>
+                    <td>1000</td>
+                    <td>0%</td>
+                  </tr>
+                  <tr>
+                    <th>Add Device</th>
+                    <td>1000</td>
+                    <td>0%</td>
+                  </tr>
+                  <tr>
+                    <th>Remove Device</th>
+                    <td>1000</td>
+                    <td>0%</td>
+                  </tr>
+                  <tr>
+                    <th>Device Full Details</th>
+                    <td>1000</td>
+                    <td>0%</td>
+                  </tr>
+                  <tr>
+                    <th rowspan="3">Devices (Home) Page</th>
+                    <th>Lock Device</th>
+                    <td>1000</td>
+                    <td>0%</td>
+                  </tr>
+                  <tr>
+                    <th>Unlock Device</th>
+                    <td>1000</td>
+                    <td>0%</td>
+                  </tr>
+                  <tr>
+                    <th>Remove Device</th>
+                    <td>1000</td>
+                    <td>5%</td>
+                  </tr>
+                  <tr>
+                    <th rowspan="2">Account Page</th>
+                    <th>User Guide</th>
+                    <td>1000</td>
+                    <td>0%</td>
+                  </tr>
+                  <tr>
+                    <th>Log Out</th>
+                    <td>1000</td>
+                    <td>2%</td>
+                  </tr>
+                  <tr>
+                    <th rowspan="3">Navigation Bar</th>
+                    <th>Home Page</th>
+                    <td>1000</td>
+                    <td>5.3%</td>
+                  </tr>
+                  <tr>
+                    <th>Notifications Page</th>
+                    <td>1000</td>
+                    <td>1.2%</td>
+                  </tr>
+                  <tr>
+                    <th>Navigation Page</th>
+                    <td>1000</td>
+                    <td>7.7%</td>
+                  </tr>
+                </tbody>
+              </table>
+              <figcaption class="fig-caption u-text-center">
+                Table 3: Android App Stress Testing
+              </figcaption>
+            </figure>
+
+          </div>
+        </div>
+
+        <div class="row u-none-xs u-none-sm-only">
+          <div class="col-4 offset-1">
+            <div class="divider"></div>
+          </div>
+          <div class="col-2">
+            <h6 class="divider-title">Usability Testing</h6>
+          </div>
+          <div class="col-4">
+            <div class="divider"></div>
+          </div>
+        </div>
+
+        <div class="space u-none-sm"></div>
+
+        <div class="row u-none-sm">
+          <div class="col-xs-4">
+            <div class="divider"></div>
+          </div>
+          <div class="col-xs-4">
+            <h6 class="divider-title">Usability Testing</h6>
+          </div>
+          <div class="col-xs-4">
+            <div class="divider"></div>
+          </div>
+        </div>
+
+        <div class="row" style="overflow-x:scroll">
+          <div class="col-6">
+            <p>
+              For our usability testing, we had 5 participants, 2 of whom
+              were native English speakers while 3 were non-native English speakers. While 3 of them were from within the
+              Systems Design Project course, 2 of them were from outside of the School of Informatics. All of them were students
+              at the University of Edinburgh. Maintaining a balanced mix
+              of both native and non-native English speakers as well as
+              students with and without a technical background helped us
+              shed some light onto how different people would interact
+              with our app.
+            </p>
+            <p>
+              The testing was conducted as
+              a recorded video call with each of the participants, where
+              they were given access to our app’s user interface through a
+              rendering on <a class="u u-C blue-link" href="https://www.figma.com/proto/8aGzkBc5NH4CKAhbOSKRtx/DHome-Usability-Testing?node-id=0%3A1">Figma</a>. We described our project to them
+              and how the app ties with the hardware. They were then
+              asked to perform certain tasks using the app and rate how
+              difficult it was for them to complete the tasks. We also noted
+              some useful comments while analysing the participant’s
+              interaction with our app. At the end we asked them some
+              general questions and documented their feedback.
+            </p>
+            <p>The tasks were:</p>
+            <ol>
+              <li>Login and view your account</li>
+              <li>Determine the status of Jane’s mailbox delivery door, battery life and storage capacity</li>
+              <li>Add a new device via the QR code on the mailbox</li>
+              <li>Unlock and lock your new device</li>
+              <li>Edit your device name and remove Jane from the device then save those settings</li>
+              <li>Remove your device</li>
+              <li>View all your notifications, then just John's mailbox notifications</li>
+              <li>Find help for errors</li>
+              <li>Log out</li>
+            </ol>
+            <br>
+            <div class="btn-group" style="width:100%">
+              <button class="btn-link" onclick="location.href='assets/files/usability-testing.pdf'">Read Source Notes</button>
+              <button class="btn-link outline" onclick="location.href='assets/files/ui-checklist.pdf'">Read UI Heuristics Evaluation</button>
+            </div>
+
+          </div>
+          <div class="col-6">
+            <div class="space"></div>
+            <figure class="fig">
+              <table class="table  small bordered">
+                <thead>
+                  <th></th>
+                  <th colspan="5">Difficulty Score (1 [very easy] - 10 [very hard])</th>
+                </thead>
+                <thead>
+                  <tr>
+                    <th><abbr title="Title1">Task No.</abbr></th>
+                    <th><abbr title="Title2">Partcipant 1</abbr></th>
+                    <th><abbr title="Title3">Partcipant 2</abbr></th>
+                    <th><abbr title="Title4">Partcipant 3</abbr></th>
+                    <th><abbr title="Title5">Partcipant 4</abbr></th>
+                    <th><abbr title="Title6">Partcipant 5</abbr></th>
+                  </tr>
+                </thead>
+                <tfoot>
+                  <tr>
+                    <th><abbr title="Title1">Task No.</abbr></th>
+                    <th><abbr title="Title2">Partcipant 1</abbr></th>
+                    <th><abbr title="Title3">Partcipant 2</abbr></th>
+                    <th><abbr title="Title4">Partcipant 3</abbr></th>
+                    <th><abbr title="Title5">Partcipant 4</abbr></th>
+                    <th><abbr title="Title6">Partcipant 5</abbr></th>
+                  </tr>
+                </tfoot>
+                <tbody>
+                  <tr>
+                    <th>1</th>
+                    <td>6-7</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>1</td>
+                  </tr>
+                  <tr>
+                    <th>2</th>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>1</td>
+                  </tr>
+                  <tr>
+                    <th>3</th>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>1-2</td>
+                    <td>1</td>
+                    <td>1</td>
+                  </tr>
+                  <tr>
+                    <th>4</th>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                  </tr>
+                  <tr>
+                    <th>5</th>
+                    <td>2-3</td>
+                    <td>1</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>1</td>
+                  </tr>
+                  <tr>
+                    <th>6</th>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                  </tr>
+                  <tr>
+                    <th>7</th>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>2</td>
+                  </tr>
+                  <tr>
+                    <th>8</th>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>1</td>
+                    <td>2</td>
+                  </tr>
+                  <tr>
+                    <th>9</th>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>2</td>
+                  </tr>
+                </tbody>
+              </table>
+              <figcaption class="fig-caption u-text-center">
+                Table 4: Usability Test Scores
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer" id="footer">
+    <div class="row">
+      <div class="col-4 offset-4 u-none-xs u-none-sm-only" style="padding-left: 30px;">
+        <img src="assets/img/long-logo-white-2.png">
+      </div>
+    </div>
+    <img class="u-none-sm" src="assets/img/small-logo-white-final-sq.png" height="100px" width="100px">
+    <div class="content">
+      <div class="divider"></div>
+      <div class="row">
+        <div class="col-4">
+          <ul class="no-bullets">
+            <a href="#system" id="sys-nav">
+              <li class="footer__list-item">System</li>
+            </a>
+            <a href="#how-it-works">
+              <li class="footer__list-item">How It Works</li>
+            </a>
+            <a href="#budget">
+              <li class="footer__list-item">Budget</li>
+            </a>
+            <ul>
+            </ul>
+          </ul>
+        </div>
+        <!-- <div class="col-4">
+          <img src="assets/img/uoe.png">
+        </div> -->
+        <div class="col-4">
+          <ul class="no-bullets">
+            <a href="#team">
+              <li class="footer__list-item">Team</li>
+            </a>
+            <a href="#evaluation">
+              <li class="footer__list-item">Evaluation</li>
+            </a>
+            <ul>
+            </ul>
+          </ul>
+        </div>
+        <div class="col-4">
+          <ul class="no-bullets">
+            <a href="user-guide.html">
+              <li class="footer__list-item">User Guide</li>
+            </a>
+            <a href="https://github.com/DeliverED-Home">
+              <li class="footer__list-item">GitHub Organisation</li>
+            </a>
+            <a href="#privacy-policy">
+              <li class="footer__list-item">Privacy Policy</li>
+            </a>
+            <ul>
+            </ul>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <p class="subtitle">&copy; 2021 DeliverED (Group 19) &bull; Made with help from <a target="_blank" id="cirrus-link" href="https://cirrus-ui.netlify.app/">Cirrus</a> and <a target="_blank" id="fa-link" href="https://fontawesome.com/license">Font
+        Awesome</a></p>
+  </footer>
+
+  <div class="modal" id="myrenzbox">
+    <a href="#stay" class="modal-overlay close-btn" aria-label="Close"></a>
+    <div class="modal-content" role="document">
+      <div class="modal-header">
+        <div class="modal-title">myRenzBox</div>
+      </div>
+      <div class="modal-body">
+        <h4>myRenzBox</h4>
+        <p>It is targeted at commercial and residential buildings where it needs to be provided for the
+          tenants and dwellers, by the owners. DeliverEd Home,
+          on the other hand, targets a slightly different demographic and has been designed keeping home owners
+          in mind, which means that it is perfectly suitable for
+          individual purchase and personal use. This also means
+          that our design is much more compact as compared to
+          myRenzBox and can be installed into smaller spaces.
+          The sanitation feature of our product is another differentiating factor, which is not included in myRenzbox.
+          As discussed under "Market Requirement", there is a
+          constant public health concern at the moment and our
+          UV sanitisation feature will help customers to protect
+          themselves and their family from contamination.</p>
+      </div>
+      <div class="modal-footer u-text-right"><a class="u-inline-block close-btn" href="#stay"><button class="btn-small">Close</button></a></div>
+    </div>
+  </div>
+
+  <div class="modal" id="yalebox">
+    <a href="#stay" class="modal-overlay close-btn" aria-label="Close"></a>
+    <div class="modal-content" role="document">
+      <div class="modal-header">
+        <div class="modal-title">Yale Smart Delivery Box</div>
+      </div>
+      <div class="modal-body">
+        <h4>Yale Smart Delivery Box</h4>
+        <p>A key difference between our products is that there is no secure compartment in their design. The parcel drop-off and collection area are the same. This makes already dropped off
+          parcels susceptible to theft by delivery people with illintentions. This was a key consideration in our design
+          for DeliverEd Home, where we have a secure compartment for parcel storage, which is not accessible from
+          the drop-off compartment, other than parcels being
+          dropped down. This means that the customer’s parcels
+          will not be accessible to anyone other than them or
+          their trusted ones. The Yale box is unlocked using
+          a keypad attached to it, which is an optional feature.
+          This brings in the hassle of creating, remembering and
+          sharing a pass-code so that people can retrieve parcels
+          from the mailbox. In contrast, DeliverEd Home can
+          be unlocked remotely, using our app, while having a
+          backup lock and key mechanism. This means that you
+          can give your trusted ones access to your parcels in
+          the secure compartment without having to be share a
+          pass-code. This is useful in situations such as when
+          you may have perishables delivered that you can’t collect in time. The Yale box remains unlocked until a
+          delivery is made and then auto-locks. The problem
+          here would be that anyone can drop off anything. On
+          the other hand, the drop off area for DeliverEd Home
+          is secured using an electromagnetic lock which we
+          plan on operating using our app. You can keep it open
+          for the duration that you expect a delivery. Securing it was considered so that no random person can
+          pull a prank and drop off unexpected items into your
+          mailbox. Yale’s design also does not consider accessibility issues. For example, in most cases, one would
+          have to bend down to retrieve parcels from it. DeliverEd Home takes this into consideration and allows
+          you to customise its installation to a preferred height.
+          The sanitation option is, again, a differentiating factor between our product and Yale’s, where they don’t
+          provide one, unlike us.</p>
+      </div>
+      <div class="modal-footer u-text-right"><a class="u-inline-block close-btn" href="#stay"><button class="btn-small">Close</button></a></div>
+    </div>
+  </div>
+
+  <div class="modal" id="amazonlocker">
+    <a href="#stay" class="modal-overlay close-btn" aria-label="Close"></a>
+    <div class="modal-content" role="document">
+      <div class="modal-header">
+        <div class="modal-title">Amazon Locker</div>
+      </div>
+      <div class="modal-body">
+        <h4>Amazon Locker</h4>
+        <p>This is a “go and collect”
+          service which may or may not be available in an area
+          close to you, whereas with DeliverEd Home, you are
+          able to store your parcels at your own address. So,
+          you don’t have to worry about the inconvenience of
+          having to travel to collect your parcels. With Amazon
+          Lockers, you have 3 calendar days to pick up your
+          parcels, but with DeliverEd Home, you don’t have to
+          worry about how long you are away. You can store
+          your parcels in our mailbox for as long as you need
+          to. Another important consideration is that only items
+          dispatched by Amazon are eligible for delivery to and
+          collection from a Locker. With DeliverEd Home you
+          can opt for any courier service of your choice. And
+          lastly, just as with the above two, you have an option
+          to sanitise your parcels inside our mailbox, which you
+          don’t with the Amazon Locker.</p>
+      </div>
+      <div class="modal-footer u-text-right"><a class="u-inline-block close-btn" href="#stay"><button class="btn-small">Close</button></a></div>
+    </div>
+  </div>
+
+  <div class="modal" id="privacy-policy">
+    <a href="#stay" class="modal-overlay close-btn" aria-label="Close"></a>
+    <div class="modal-content" role="document">
+      <div class="modal-header">
+        <div class="modal-title">Privacy Policy</div>
+      </div>
+      <div class="modal-body">
+        <blockquote>Last updated: March 23, 2021.</blockquote>
+        <p>This Privacy Policy describes our policies and procedures on the collection, use and disclosure of your information when you use our services, and tells you about your privacy rights and how the law protects you. DeliverEd does not share
+          your information with any third parties, and any information we do collect will only be used as permitted by law.We use your personal data to provide our personalised secure mailbox services. By using our services, you agree to the
+          collection and use of information in accordance with this Privacy Policy. Please read this Policy and ensure that you understand it.</p>
+        <br>
+        <h4>Collecting and Using Your Personal Data</h4>
+        <h5>Types of Data Colected</h5>
+        <h6>Personal Data</h6>
+        <p>While using our app services, we will ask you to sign in using your Google account. This provides us with certain personally identifiable information that can be used to contact or identify you. This is also our only point of collecting
+          information. This information consists of:</p>
+        <ul>
+          <li>Email address</li>
+          <li>First and last name</li>
+          <li>Usage data</li>
+        </ul>
+        <h6>Usage Data</h6>
+        <p>Usage Data is collected automatically when using our services.
+        <p>
+        <p>Usage Data may include information such as your device's Internet Protocol address (e.g. IP address), browser type, browser version, the pages of our site or app that you visit, the time and date of your visit, the time spent on those
+          pages, unique device identifiers and other diagnostic data.</p>
+        <br>
+        <h5>Use of Your Personal Data</h5>
+        <p>DeliverEd may use personal data for the following purposes:</p>
+        <ul>
+          <li><strong>To provide our service,</strong> as we rely on information provided by Google to identify you.</li>
+          <li><strong>To manage your account:</strong> to manage your registration as a user of the service. This involves registering devices under your name, and adding people to your existing devices.</li>
+          <li><strong>To contact you;</strong> to contact you by email, or other equivalent forms of electronic communication, such as a mobile application's push notifications regarding updates or informative communications related to the
+            functionalities, products, or contracted services, including the security updates, when necessary or reasonable for their implementation.</li>
+          <li><strong>To manage your requests:</strong> to attend and manage your requests and queries to us.</li>
+          <li><strong>For other purposes:</strong> we may use your information for other purposes, such as data analysis, identifying usage trends, determining the effectiveness of our promotional campaigns and to evaluate and improve our service,
+            products, services, marketing, and your experience.</li>
+        </ul>
+        <br>
+        <h5>Retention of Your Personal Data</h5>
+        <p>DeliverEd will retain your personal data only for as long as is necessary for the purposes set out in this Privacy Policy. We will retain and use this data to the extent necessary to comply with our legal obligations (for example, if we
+          are required to retain your data to comply with applicable laws), resolve disputes, and enforce our legal agreements and policies. We will also retain Usage Data for internal analysis purposes. Usage Data is generally retained for a shorter
+          time, except when this data is used to strengthen the security or to improve the functionality of our service, or we are legally obligated to retain this data for longer time periods. You can request a report of the information we retain on
+          you by contacting us using one of the methods detailed at the end of this document. You can also contact us to opt out of data collection, however this will prevent you from using our services, as our mailboxes rely on personal profiles to
+          function.</p>
+        <br>
+        <h5>Transfer of Your Personal Data</h5>
+        <p>DeliverEd does not process your personal data in external offices, and relies solely on data shared with us by Google. Because of this, there will be no transference of your personal data by us.</p>
+        <br>
+        <h5>Disclosure of Your Personal Data</h5>
+        <h6>Business Transactions</h6>
+        <p>If DeliverEd is involved in a merger, acquisition or asset sale, your personal data may be transferred. We will provide notice before this occurs.</p>
+        <h6>Law Enforcement</h6>
+        <p>Under certain circumstances, we may be required to disclose your data if required to do so by law or in response to valid requests by public authorities (e.g. a court or a government agency).</p>
+        <br>
+        <h5>Security of Your Personal Data</h5>
+        <p>The security of your personal data is extremely important to us, but remember that no method of transmission over the Internet, or method of electronic storage, is 100% secure. While we strive to use commercially acceptable means to
+          protect your data, we cannot guarantee its absolute security. Our collection of data largely relies on the security of data stored by Google.</p>
+        <br>
+        <h4>Children's Privacy</h4>
+        <p>Our service does not address anyone under the age of 13. We do not knowingly collect personally identifiable information from anyone under the age of 13. If you are a parent or guardian and you are aware that your child has provided us
+          with personal data, please contact us. If we become aware that we have collected personal data from anyone under the age of 13 without verification of parental consent, we will take steps to remove that information.</p>
+        <br>
+        <h4>Links to Other Websites</h4>
+        <p>Our service may contain links to other websites that are not operated by us, for example submitting comments on Industry day. If you click on a third-party link, you will be directed to that third party's site. We strongly advise you to
+          review the Privacy Policy of every site you visit. We have no control over and assume no responsibility for the content, privacy policies or practices of any third-party sites or services.</p>
+        <br>
+        <h4>Changes to this Privacy Policy</h4>
+        <p>We may update Our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page. We will let you know via email and/or a prominent notice on our app and website, prior to the change
+          becoming effective and update the "Last updated" date at the top of this Privacy Policy. You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this
+          page.</p>
+        <h4>Contact Us</h4>
+        <p>If you have any questions about this Privacy Policy, want to request a data retention record, or opt out of data collection entirely, you can contact us via email at: <a
+            href="mailto:DeliverEDHome.SDP21@gmail.com">DeliverEDHome.SDP21@gmail.com</a>
+          <br><br>
+          <button class="btn-primary" onclick="location.href='assets/files/privacy-policy.pdf'">Download PDF</button>
+      </div>
+      <div class="modal-footer u-text-right"><a class="u-inline-block close-btn" href="#stay"><button class="btn-small">Close</button></a></div>
+    </div>
+  </div>
+
+  <script type=" text/javascript" src="assets/js/scroll.js"></script>
+  <script type="text/javascript" src="assets/js/dropdownNav.js"></script>
+  <script src="https://vjs.zencdn.net/7.10.2/video.min.js"></script>
+</body>
+
+</html>
